@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "./variables";
+@import url("https://css.gg/phone.css");
+@import url("https://css.gg/mail.css");
+@import url("https://css.gg/menu.css");
+
+::selection {
+  color: black;
+  background: gold;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: $bg-dark;
+  color: #eee;
+}
+
+section {
+  padding-block: 1em;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  position: relative;
+  transition: 0.3s ease;
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 1px;
+    background: gold;
+    width: 0%;
+    position: absolute;
+    bottom: -0.3rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+    transition: 0.5s ease;
+  }
+
+  &.logo-container,
+  &.btn,
+  &.work-link {
+    &::after {
+      display: none;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    color: #eee;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.txt-center {
+  text-align: center !important;
+}
+
+.page-width {
+  padding-inline: 5%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.color-white {
+  color: white !important;
+}
+
+.heading,
+.primary,
+.secondary {
+  margin-block: 0.5em;
+  font-family: "Cabin", sans-serif;
+}
+
+.primary {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  color: $primary-normal;
+}
+
+.secondary {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 500;
+  color: $secondary-normal;
+}
+
+.heading {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+}
+
+.rte {
+  font-weight: 300;
+}
+
+.txt-container {
+  p {
+    max-width: 50ch;
+  }
+
+  // mobile rules
+  @media (max-width: 750px) {
+    text-align: center;
+
+    p {
+      margin: 0 auto;
+    }
+  }
+}
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.6em 1.8em;
+  transition: 0.5s ease;
+  border-radius: 3px;
+  color: $btn-color;
+  border: 1px solid $btn-border-color;
+  background: $btn-bg-color;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-weight: 400;
+  box-shadow: none;
+  position: relative;
+  z-index: 1;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 0%;
+    transition: 0.5s ease;
+    z-index: -1;
+    background: $btn-hover-bg-color;
+    border-radius: inherit;
+  }
+
+  &:hover,
+  &:focus {
+    color: $btn-hover-color;
+    border-color: $btn-hover-border-color;
+
+    &::before {
+      width: 100%;
+    }
+  }
+}
+
+// grid-container
+.grid-container {
+  padding-block: 1em;
+  display: grid;
+  justify-content: center;
+  align-items: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-auto-rows: auto;
+  gap: 1em;
+
+  .grid-item {
+  }
+}
+
+// form conatiner
+.form-container {
+  form {
+    .form-item {
+      width: 100%;
+      margin-bottom: 2rem;
+
+      input,
+      textarea {
+        font-family: "Poppins", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        width: 100%;
+        max-width: 100%;
+        border: none;
+        background: none;
+        color: #fff;
+        border-bottom: 2px solid $primary-light;
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        transition: 0.3s ease;
+        transition-property: border;
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.8);
+        }
+
+        &:focus {
+          border-color: $secondary-dark;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,392 @@
+@import "./variables";
+
+// /ham rules
+.ham-container {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 2010;
+  display: none;
+
+  .ham {
+    cursor: pointer;
+    position: relative;
+    width: 20px;
+    height: 20px;
+
+    i {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @media (max-width: 750px) {
+    display: block;
+  }
+}
+
+///header
+header {
+  padding: 3rem;
+  backdrop-filter: blur(5px);
+  will-change: auto;
+  top: 0;
+  position: fixed;
+  z-index: 2000;
+  width: 100%;
+  backdrop-filter: none;
+  transition: 0.3s ease;
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 5%;
+    text-transform: uppercase;
+
+    .logo-container {
+      margin-right: auto;
+
+      img {
+        max-width: 10rem;
+      }
+    }
+
+    .nav-link {
+    }
+  }
+
+  &.scrolled {
+    padding: 1rem 3rem;
+    background: hsla(0, 0%, 0%, 0.8);
+    backdrop-filter: blur(5px);
+  }
+
+  // mobile rules
+  @media (max-width: 750px) {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: hsla(0, 0%, 0%, 0.8);
+    padding: 0 !important;
+    padding-top: 2rem !important;
+    transform: translate(-100%);
+
+    nav {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .logo-container {
+        margin: 0;
+      }
+    }
+  }
+
+  &.hide {
+    transform: translate(0%);
+  }
+}
+
+// hero
+#hero {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  &::before {
+    content: "";
+    background: $bg-lighter url(../assets/hero-bg.jpg) no-repeat center center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.6;
+    z-index: -1;
+  }
+
+  .txt-container {
+    max-width: 66ch;
+
+    p {
+      margin-inline: auto;
+    }
+  }
+}
+
+// about
+#about {
+  .me {
+    .grid-container {
+      justify-content: center;
+
+      .img-container {
+        img {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  .skills {
+    .grid-container {
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      grid-auto-rows: auto;
+
+      .grid-item {
+        .primary {
+          margin: 0;
+          padding: 3rem 0;
+        }
+
+        .txt-heading {
+          margin-bottom: clamp(.5rem, 4vw, 2rem);
+
+          h3 {
+            font-weight: bold;
+            margin: 0;
+            margin-bottom: 0.2rem;
+            color: $primary-light;
+          }
+
+          p {
+            margin: 0;
+            font-weight: 300;
+          }
+        }
+
+        .skills-headings {
+          h3 {
+            margin-bottom: 1rem;
+          }
+        }
+
+        // mobile rules
+        @media (max-width: 750px) {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+// freelancer
+#freelancer {
+  padding: 5rem 3rem;
+  position: relative;
+
+  &::before {
+    content: "";
+    background: $bg-lighter url(../assets/freelancer.jpg) no-repeat center;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.6;
+    z-index: -1;
+  }
+
+  .txt-container {
+    .rte {
+      margin: 0 auto;
+    }
+
+    & > * {
+      margin-bottom: 1rem !important;
+    }
+  }
+}
+
+// services
+#services {
+  max-width: 100%;
+
+  background: $bg-lighter;
+  .services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 5rem) 0;
+
+    .service-item {
+      text-align: center;
+
+      h3 {
+        font-weight: normal;
+      }
+
+      img {
+        margin: 0 auto;
+        max-height: 2.5rem;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+// works
+#works {
+  padding-bottom: 5rem;
+
+  .works-grid-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    gap: 1rem;
+    grid-template-areas:
+      "title work-1 work-2"
+      "title work-3 work-4"
+      "work-5 all-links all-links"
+      "work-6 all-links all-links";
+
+    .work {
+      text-align: center;
+      background: #fff;
+    }
+
+    a {
+      display: block;
+      height: 100%;
+      position: relative;
+
+      img {
+      }
+
+      p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        font-size: 2rem;
+        padding: 0;
+        margin: 0;
+        font-weight: normal;
+        transition: 0.3s ease;
+        opacity: 0;
+        border-bottom: 2px solid #fff0;
+
+        &:hover,
+        &:focus {
+          border-color: #fff;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        p {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .title {
+    grid-area: title;
+  }
+
+  @for $i from 1 through 6 {
+    .work-#{$i} {
+      grid-area: work-#{$i};
+    }
+  }
+
+  .all-links {
+    grid-area: all-links;
+  }
+
+  .primary-bg {
+    background-color: $primary-normal !important;
+  }
+
+  .all-links,
+  .title {
+    display: grid;
+    place-items: center;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      display: grid !important;
+      place-items: center !important;
+
+      P {
+        font-size: 4rem;
+        font-weight: bold;
+        opacity: 1;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+// contact
+#contact {
+  background: $bg-lighter;
+  max-width: revert;
+
+  .contact {
+    margin: 0 auto;
+    padding-top: clamp(1rem, 7vw, 5rem);
+
+    .phone-email-container {
+      grid-template: 1fr/ 1fr 1fr;
+      align-items: center;
+      padding-bottom: clamp(2rem, 5vw, 3rem);
+      justify-content: center;
+      margin: 0 auto;
+      max-width: 1200px;
+
+      .grid-item {
+        .txt-container {
+          display: inline-block;
+
+          a {
+            display: flex;
+            text-transform: lowercase;
+            justify-content: center;
+            align-items: baseline;
+            gap: 1rem;
+            font-size: clamp(1rem, 5vw, 1.5rem);
+
+            i {
+              transform: scale(1.5);
+              color: $primary-normal;
+            }
+          }
+        }
+      }
+
+      // mobile rules  
+      @media (max-width: 750px) {
+        grid-template: 1fr 1fr/ 1fr;
+      }
+    }
+
+    .form-container {
+      margin: 0 auto;
+      max-width: 700px;
+    }
+  }
+}
+
+// footer
+footer {
+  padding: 1rem;
+  background: #000;
+}
