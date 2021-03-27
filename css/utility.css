@@ -4,11 +4,11 @@
 @import url("https://css.gg/menu.css");
 ::-moz-selection {
   color: black;
-  background: gold;
+  background: #ff68d0;
 }
 ::selection {
   color: black;
-  background: gold;
+  background: #ff68d0;
 }
 
 *,
@@ -59,7 +59,7 @@ a::after {
   content: "";
   display: inline-block;
   height: 1px;
-  background: gold;
+  background: #ff68d0;
   width: 0%;
   position: absolute;
   bottom: -0.3rem;
@@ -106,7 +106,7 @@ a:focus::after, a:hover::after {
 .primary {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 600;
-  color: gold;
+  color: #ff0083;
 }
 
 .secondary {
@@ -144,8 +144,8 @@ a:focus::after, a:hover::after {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
   border-radius: 3px;
-  color: gold;
-  border: 1px solid #ac8f00;
+  color: #ff68d0;
+  border: 1px solid #b9004d;
   background: transparent;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -170,13 +170,13 @@ a:focus::after, a:hover::after {
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
   z-index: -1;
-  background: gold;
+  background: #ff0083;
   border-radius: inherit;
 }
 
 .btn:hover, .btn:focus {
   color: #fff;
-  border-color: gold;
+  border-color: #ff0083;
 }
 
 .btn:hover::before, .btn:focus::before {
@@ -212,7 +212,7 @@ a:focus::after, a:hover::after {
   border: none;
   background: none;
   color: #fff;
-  border-bottom: 2px solid #fff93f;
+  border-bottom: 2px solid #ff68d0;
   font-size: 1.2rem;
   padding: 0.5rem 1rem;
   -webkit-transition: 0.3s ease;

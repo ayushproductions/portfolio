@@ -58,7 +58,7 @@ header nav .logo-container {
 }
 
 header nav .logo-container img {
-  max-width: 10rem;
+  max-width: 6rem;
 }
 
 header.scrolled {
@@ -131,8 +131,8 @@ header.hide {
 }
 
 #hero .img-container img {
-  -o-object-position: right;
-     object-position: right;
+  -o-object-position: right bottom;
+     object-position: right bottom;
 }
 
 #about .me .grid-container {
@@ -165,7 +165,7 @@ header.hide {
   font-weight: bold;
   margin: 0;
   margin-bottom: 0.2rem;
-  color: #fff93f;
+  color: #ff68d0;
 }
 
 #about .skills .grid-container .grid-item .txt-heading p {
@@ -351,7 +351,7 @@ header.hide {
 }
 
 #works .primary-bg {
-  background-color: gold !important;
+  background-color: #ff0083 !important;
 }
 
 #works .all-links,
@@ -405,7 +405,7 @@ header.hide {
 }
 
 #contact .contact .phone-email-container .grid-item {
-  margin: .5rem auto;
+  margin: 0.5rem auto;
 }
 
 #contact .contact .phone-email-container .grid-item a {
@@ -417,7 +417,7 @@ header.hide {
   width: -moz-max-content;
   width: max-content;
   margin: 0 auto;
-  padding-block: .5rem;
+  padding-block: 0.5rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -431,7 +431,7 @@ header.hide {
 #contact .contact .phone-email-container .grid-item a i {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
-  color: gold;
+  color: #ff0083;
 }
 
 #contact .contact .phone-email-container .grid-item a p {

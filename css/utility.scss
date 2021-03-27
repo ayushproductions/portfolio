@@ -6,7 +6,7 @@
 
 ::selection {
   color: black;
-  background: gold;
+  background: $primary-light;
 }
 
 *,
@@ -52,7 +52,7 @@ a {
     content: "";
     display: inline-block;
     height: 1px;
-    background: gold;
+    background: $primary-light;
     width: 0%;
     position: absolute;
     bottom: -0.3rem;
@@ -192,6 +192,7 @@ a {
   .grid-item {
   }
 }
+
 
 // form conatiner
 .form-container {

@@ -5,9 +5,12 @@ $header-bg-color: #684d42;
 $header-links-color: #fff;
 
 //theme colors
-$primary-light: #fff93f;
-$primary-normal: gold;
-$primary-dark: #ac8f00;
+// $primary-light: #fff93f;
+// $primary-normal: gold;
+// $primary-dark: #ac8f00;
+$primary-light: #ff68d0;
+$primary-normal: #ff0083;
+$primary-dark: #b9004d;
 $secondary-light: #00f0d7;
 $secondary-normal: #00bfa8;
 $secondary-dark: #00907b;
@@ -15,7 +18,7 @@ $bg-lighter: hsl(0, 0%, 7%);
 $bg-dark: hsl(0, 0%, 3%);
 
 //buttons
-$btn-color: gold;
+$btn-color: $primary-light;
 $btn-bg-color: transparent;
 $btn-border-color: $primary-dark;
 $btn-hover-bg-color: $primary-normal;
