@@ -111,10 +111,16 @@ header.hide {
   text-align: center;
 }
 
-#hero::before {
-  content: "";
-  background: #121212 url(../assets/hero-bg.jpg) no-repeat center center;
-  background-size: cover;
+#hero .txt-container {
+  max-width: 66ch;
+}
+
+#hero .txt-container p {
+  margin-inline: auto;
+}
+
+#hero .img-container {
+  position: absolute;
   position: absolute;
   top: 0px;
   right: 0px;
@@ -124,12 +130,9 @@ header.hide {
   z-index: -1;
 }
 
-#hero .txt-container {
-  max-width: 66ch;
-}
-
-#hero .txt-container p {
-  margin-inline: auto;
+#hero .img-container img {
+  -o-object-position: right;
+     object-position: right;
 }
 
 #about .me .grid-container {
@@ -151,6 +154,7 @@ header.hide {
 #about .skills .grid-container .grid-item .primary {
   margin: 0;
   padding: 3rem 0;
+  padding-bottom: clamp(1rem, 5vw, 3rem);
 }
 
 #about .skills .grid-container .grid-item .txt-heading {
@@ -400,29 +404,38 @@ header.hide {
   max-width: 1200px;
 }
 
-#contact .contact .phone-email-container .grid-item .txt-container {
-  display: inline-block;
+#contact .contact .phone-email-container .grid-item {
+  margin: .5rem auto;
 }
 
-#contact .contact .phone-email-container .grid-item .txt-container a {
+#contact .contact .phone-email-container .grid-item a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   text-transform: lowercase;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 0 auto;
+  padding-block: .5rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 1rem;
-  font-size: clamp(1rem, 5vw, 1.5rem);
+  font-size: 1rem;
 }
 
-#contact .contact .phone-email-container .grid-item .txt-container a i {
+#contact .contact .phone-email-container .grid-item a i {
   -webkit-transform: scale(1.5);
           transform: scale(1.5);
   color: gold;
+}
+
+#contact .contact .phone-email-container .grid-item a p {
+  margin: 0;
 }
 
 @media (max-width: 750px) {
