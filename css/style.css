@@ -145,6 +145,44 @@ header.hide {
   margin: 0 auto;
 }
 
+#about .me .grid-container .grid-item .social-icons {
+  padding: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#about .me .grid-container .grid-item .social-icons .icon-item a {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+#about .me .grid-container .grid-item .social-icons .icon-item a img {
+  max-width: 2rem;
+}
+
+#about .me .grid-container .grid-item .social-icons .icon-item a:hover {
+  -webkit-filter: invert(0.7);
+          filter: invert(0.7);
+}
+
+@media (max-width: 750px) {
+  #about .me .grid-container .grid-item .social-icons {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 #about .skills .grid-container {
   -ms-grid-columns: (minmax(20rem, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -266,6 +304,33 @@ header.hide {
 #works .works-grid-container .work {
   text-align: center;
   background: #fff;
+  position: relative;
+}
+
+#works .works-grid-container .work::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 0%;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  z-index: 1;
+}
+
+#works .works-grid-container .work:hover::before, #works .works-grid-container .work:focus::before {
+  width: 100%;
+}
+
+#works .works-grid-container .work:hover a p, #works .works-grid-container .work:focus a p {
+  opacity: 1;
+}
+
+#works .works-grid-container .work.title::before {
+  display: none;
 }
 
 #works .works-grid-container a {
@@ -289,6 +354,7 @@ header.hide {
   transition: 0.3s ease;
   opacity: 0;
   border-bottom: 2px solid #fff0;
+  z-index: 5;
 }
 
 #works .works-grid-container a p:hover, #works .works-grid-container a p:focus {
@@ -429,8 +495,6 @@ header.hide {
 }
 
 #contact .contact .phone-email-container .grid-item a i {
-  -webkit-transform: scale(1.5);
-          transform: scale(1.5);
   color: #ff0083;
 }
 

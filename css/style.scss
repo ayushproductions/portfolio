@@ -146,6 +146,36 @@ header {
           margin: 0 auto;
         }
       }
+
+      .grid-item {
+        .social-icons {
+          padding: 1rem 0;
+          display: flex;
+          gap: 1rem;
+          justify-content: start;
+          align-items: center;
+
+          .icon-item {
+            a {
+              filter: invert(1);
+              transition: 0.3s ease;
+
+              img {
+                max-width: 2rem;
+              }
+
+              &:hover {
+                filter: invert(0.7);
+              }
+            }
+          }
+
+          // mobile rules
+          @media (max-width: 750px) {
+            justify-content: center;
+          }
+        }
+      }
     }
   }
 
@@ -272,13 +302,45 @@ header {
     .work {
       text-align: center;
       background: #fff;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 0%;
+        transition: 0.3s ease;
+        z-index: 1;
+      }
+
+      &:hover,
+      &:focus {
+        &::before {
+          width: 100%;
+        }
+
+        a {
+          p {
+            opacity: 1;
+          }
+        }
+      }
+
+      &.title {
+        &::before {
+          display: none;
+        }
+      }
     }
 
     a {
       display: block;
       height: 100%;
       position: relative;
-
       img {
       }
 
@@ -295,6 +357,7 @@ header {
         transition: 0.3s ease;
         opacity: 0;
         border-bottom: 2px solid #fff0;
+        z-index: 5;
 
         &:hover,
         &:focus {
@@ -383,7 +446,6 @@ header {
           font-size: 1rem;
 
           i {
-            transform: scale(1.5);
             color: $primary-normal;
           }
 
